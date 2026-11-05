@@ -1,0 +1,14 @@
+{
+  "sentinel": {
+    "block2_tiles": 1973,
+    "assigned": 20,
+    "unmatched": 1953,
+    "score_median": 0.5368413329124451
+  },
+  "palsar": {
+    "block2_tiles": 1332,
+    "assigned": 113,
+    "unmatched": 1219,
+    "score_median": 0.652606725692749
+  }
+}

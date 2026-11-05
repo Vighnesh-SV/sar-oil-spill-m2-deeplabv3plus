@@ -1,0 +1,9 @@
+14:21 start: Peru, official model
+14:35 start: MDOD, official model
+14:40 start: train leak-free model
+15:25 queue re-armed: waiting for leak-free training to finish
+15:53 start: SOS test, leak-free
+15:54 start: Peru, leak-free model
+16:02 start: MDOD, leak-free model
+[tta] all M2 steps done: Peru + MDOD for both models, leak-free training + test
+[plain] 16:04

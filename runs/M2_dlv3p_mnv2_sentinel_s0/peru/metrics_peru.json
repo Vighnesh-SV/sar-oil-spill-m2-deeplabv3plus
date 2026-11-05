@@ -1,0 +1,270 @@
+{
+  "all": {
+    "accuracy": 0.6021248504289987,
+    "precision_oil": 0.13013691515306305,
+    "recall_oil": 0.9483924856412767,
+    "f1_oil": 0.2288688140440151,
+    "iou_oil": 0.12922183057856385,
+    "iou_bg": 0.5771586396579328,
+    "miou": 0.3531902351182483,
+    "precision_bg": 0.9941186950908132,
+    "recall_bg": 0.5791361160377279,
+    "f1_bg_officialscript": 0.7318967479176497,
+    "boundary_f1": 0.02664834059494025,
+    "roc_auc": 0.9079721657656654,
+    "pr_auc": 0.41695422464438586,
+    "ece": 0.2954630188335623,
+    "brier": 0.32107425200055667,
+    "oil_pixel_fraction": 0.06225683910599172,
+    "called_oil_rate_per_class": {
+      "sea": 0.4068311872880803,
+      "oil": 0.9483924856412767,
+      "look-alike": 0.874171977929436,
+      "ship": 0.6103419133031927,
+      "land": 0.13466674193238257
+    },
+    "class_pixel_share": {
+      "sea": 0.8409391840002872,
+      "oil": 0.06225683910599172,
+      "look-alike": 0.05267896808561732,
+      "ship": 0.001154765523729547,
+      "land": 0.042970243284374224
+    },
+    "n_patches": 2013
+  },
+  "official_test": {
+    "accuracy": 0.6653110120423447,
+    "precision_oil": 0.09275484301806053,
+    "recall_oil": 0.9736309243957261,
+    "f1_oil": 0.16937394760785923,
+    "iou_oil": 0.09252241733724514,
+    "iou_bg": 0.6534867982303305,
+    "miou": 0.37300460778378786,
+    "precision_bg": 0.9985379603248504,
+    "recall_bg": 0.6541126679739055,
+    "f1_bg_officialscript": 0.7904348543087669,
+    "boundary_f1": 0.01983925447114907,
+    "roc_auc": 0.935594117906501,
+    "pr_auc": 0.36452110503456087,
+    "ece": 0.2455684262644315,
+    "brier": 0.27144014264256494,
+    "oil_pixel_fraction": 0.03504758755836261,
+    "called_oil_rate_per_class": {
+      "sea": 0.30482438186848115,
+      "oil": 0.9736309243957261,
+      "look-alike": 0.842175023281718,
+      "ship": 0.9071178769800453,
+      "land": 0.06852078957631459
+    },
+    "class_pixel_share": {
+      "sea": 0.8566444216395271,
+      "oil": 0.03504758755836261,
+      "look-alike": 0.08417887941620053,
+      "ship": 0.00010972333377634985,
+      "land": 0.024019388052133415
+    },
+    "n_patches": 338
+  },
+  "per_scene": {
+    "10012_1_2016-03-26_S1_GRD_VV": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 2993349
+    },
+    "10016_2_2018-11-29_S1_GRD_VVVH": {
+      "oil_px": 620200,
+      "oil_recall": 0.9103563366655918,
+      "lookalike_px_called_oil": 0
+    },
+    "10022_1_2022-10-17_S1_GRD_VVVH": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 1980916
+    },
+    "110_1_2019-04-18_S1_GRD_VVVH": {
+      "oil_px": 38550,
+      "oil_recall": 0.9880674448767834,
+      "lookalike_px_called_oil": 0
+    },
+    "111_2_2019-04-18_S1_GRD_VVVH": {
+      "oil_px": 140399,
+      "oil_recall": 0.996417353399953,
+      "lookalike_px_called_oil": 20115
+    },
+    "111_4_2019-04-30_S1_GRD_VVVH": {
+      "oil_px": 9235,
+      "oil_recall": 0.9967514889009204,
+      "lookalike_px_called_oil": 557390
+    },
+    "118_1_2019-09-09_S1_GRD_VVVH": {
+      "oil_px": 47143,
+      "oil_recall": 0.9788727912945718,
+      "lookalike_px_called_oil": 15215
+    },
+    "120_4_2019-10-27_S1_GRD_VVVH": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 1425516
+    },
+    "129_2_2020-03-19_S1_GRD_VVVH": {
+      "oil_px": 121488,
+      "oil_recall": 0.9049124193335968,
+      "lookalike_px_called_oil": 0
+    },
+    "129_4_2020-03-31_S1_GRD_VVVH": {
+      "oil_px": 1105718,
+      "oil_recall": 0.9225534901303949,
+      "lookalike_px_called_oil": 407538
+    },
+    "12_3_2016-05-30_S1_GRD_VV": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 96186
+    },
+    "131_1_2020-08-22_S1_GRD_VVVH": {
+      "oil_px": 11475,
+      "oil_recall": 0.979433551198257,
+      "lookalike_px_called_oil": 173415
+    },
+    "136_3_2021-01-25_S1_GRD_VVVH": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 863412
+    },
+    "145_4_2021-05-10_S1_GRD_VVVH": {
+      "oil_px": 1405925,
+      "oil_recall": 0.9007144762345075,
+      "lookalike_px_called_oil": 0
+    },
+    "146_1_2021-05-22_S1_GRD_VVVH": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 6138
+    },
+    "146_2_2021-05-25_S1_GRD_VVVH": {
+      "oil_px": 180241,
+      "oil_recall": 0.9696683884354836,
+      "lookalike_px_called_oil": 89795
+    },
+    "147_3_2021-11-18_S1_GRD_VVVH": {
+      "oil_px": 511071,
+      "oil_recall": 0.9619211420722366,
+      "lookalike_px_called_oil": 0
+    },
+    "148_1_2021-11-18_S1_GRD_VVVH": {
+      "oil_px": 34373,
+      "oil_recall": 0.996276146975824,
+      "lookalike_px_called_oil": 0
+    },
+    "15_2_2016-08-22_S1_GRD_VV": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 2362120
+    },
+    "161_1_2022-08-30_S1_GRD_VVVH": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 298840
+    },
+    "172_1_2023-08-22_S1_GRD_VVVH": {
+      "oil_px": 1251369,
+      "oil_recall": 0.925812450204536,
+      "lookalike_px_called_oil": 0
+    },
+    "172_2_2023-08-25_S1_GRD_VVVH": {
+      "oil_px": 418686,
+      "oil_recall": 0.9934724351900948,
+      "lookalike_px_called_oil": 293638
+    },
+    "172_3_2023-09-03_S1_GRD_VVVH": {
+      "oil_px": 338791,
+      "oil_recall": 0.9343843254395778,
+      "lookalike_px_called_oil": 152047
+    },
+    "20241_1_2024-12-26_S1_GRD_VVVH": {
+      "oil_px": 181773,
+      "oil_recall": 0.9937339428848069,
+      "lookalike_px_called_oil": 26912
+    },
+    "20241_2_2024-12-29_S1_GRD_VVVH": {
+      "oil_px": 443979,
+      "oil_recall": 0.9413238013509648,
+      "lookalike_px_called_oil": 36497
+    },
+    "20241_3_2025-01-07_S1_GRD_VVVH": {
+      "oil_px": 833561,
+      "oil_recall": 0.9483817021189811,
+      "lookalike_px_called_oil": 101931
+    },
+    "20241_4_2025-01-10_S1_GRD_VVVH": {
+      "oil_px": 142202,
+      "oil_recall": 0.9974613577868103,
+      "lookalike_px_called_oil": 0
+    },
+    "28_3_2018-06-17_S1_GRD_VVVH": {
+      "oil_px": 128,
+      "oil_recall": 0.8984375,
+      "lookalike_px_called_oil": 2966082
+    },
+    "31_1_2018-10-27_S1_GRD_VVVH": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 1242097
+    },
+    "55_2_2022-01-25_S1_GRD_VVVH": {
+      "oil_px": 7300001,
+      "oil_recall": 0.9648220596134165,
+      "lookalike_px_called_oil": 1462126
+    },
+    "55_4_2022-02-02_S1_GRD_VVVH": {
+      "oil_px": 1245752,
+      "oil_recall": 0.9389340735555712,
+      "lookalike_px_called_oil": 1367334
+    },
+    "7_1_2015-03-16_S1_GRD_VV": {
+      "oil_px": 51394,
+      "oil_recall": 0.9366268436004203,
+      "lookalike_px_called_oil": 1245755
+    },
+    "80_2_2014-10-11_S1_GRD_VV": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 926013
+    },
+    "9001_1_2022-01-25_S1_GRD_VVVH": {
+      "oil_px": 12517390,
+      "oil_recall": 0.9566381649848731,
+      "lookalike_px_called_oil": 0
+    },
+    "93_1_2017-04-01_S1_GRD_VVVH": {
+      "oil_px": 980749,
+      "oil_recall": 0.7846176748587049,
+      "lookalike_px_called_oil": 0
+    },
+    "93_4_2017-04-16_S1_GRD_VVVH": {
+      "oil_px": 109088,
+      "oil_recall": 0.7682054854796128,
+      "lookalike_px_called_oil": 854135
+    },
+    "93_6_2017-04-13_S1_GRD_VV": {
+      "oil_px": 326816,
+      "oil_recall": 0.8602088025066092,
+      "lookalike_px_called_oil": 2227722
+    },
+    "95_1_2017-07-18_S1_GRD_VVVH": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 32527
+    },
+    "95_3_2017-07-21_S1_GRD_VVVH": {
+      "oil_px": 0,
+      "oil_recall": null,
+      "lookalike_px_called_oil": 75886
+    },
+    "9_1_2016-01-13_S1_GRD_VV": {
+      "oil_px": 2485180,
+      "oil_recall": 0.9894216917889247,
+      "lookalike_px_called_oil": 0
+    }
+  }
+}

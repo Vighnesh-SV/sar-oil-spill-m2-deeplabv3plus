@@ -1,0 +1,85 @@
+{
+  "null": {
+    "stage1_p999": 0.9043982028961182,
+    "stage1_max": 0.9080896377563477,
+    "stage2_p999": 0.9440300464630127,
+    "stage2_max": 0.9499773383140564,
+    "stage2_null_n": 300
+  },
+  "sentinel": {
+    "n_test": 839,
+    "n_train": 3354,
+    "test_with_copy_in_train": 11,
+    "test_with_region_in_train": 102,
+    "test_leaked_either": 109,
+    "pct_test_leaked_either": 12.99165673420739,
+    "train_tiles_with_copy_in_train": 33,
+    "copy_corr_percentiles_test": {
+      "5": 0.2614366114139557,
+      "25": 0.3887923061847687,
+      "50": 0.5284073948860168,
+      "75": 0.6964135766029358,
+      "95": 0.8572032451629639
+    },
+    "region_score_percentiles_test": {
+      "5": 0.28702735900878906,
+      "25": 0.5628912448883057,
+      "50": 0.7948307991027832,
+      "75": 0.902340829372406,
+      "95": 0.9669667482376099
+    },
+    "clusters_total": 4063,
+    "clusters_size_ge_2": 116,
+    "largest_clusters": [
+      5,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "test_tiles_in_clusters_shared_with_train": 109
+  },
+  "palsar": {
+    "n_test": 776,
+    "n_train": 3101,
+    "test_with_copy_in_train": 3,
+    "test_with_region_in_train": 147,
+    "test_leaked_either": 149,
+    "pct_test_leaked_either": 19.201030927835053,
+    "train_tiles_with_copy_in_train": 18,
+    "copy_corr_percentiles_test": {
+      "5": 0.252416729927063,
+      "25": 0.3626381456851959,
+      "50": 0.4506306052207947,
+      "75": 0.5820976495742798,
+      "95": 0.7925719022750854
+    },
+    "region_score_percentiles_test": {
+      "5": 0.3387359380722046,
+      "25": 0.6588003635406494,
+      "50": 0.8568593859672546,
+      "75": 0.9291562438011169,
+      "95": 0.9845088720321655
+    },
+    "clusters_total": 3717,
+    "clusters_size_ge_2": 147,
+    "largest_clusters": [
+      5,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "test_tiles_in_clusters_shared_with_train": 149
+  }
+}

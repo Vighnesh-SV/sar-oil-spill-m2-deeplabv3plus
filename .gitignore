@@ -1,0 +1,18 @@
+# datasets and caches (never committed: licensed data, large files)
+data/*
+!data/README.md
+.cache/
+.venv/
+venv/
+# heavy run outputs
+*.pth
+*.npz
+runs/*/pred_*/
+runs/*/_debug/
+runs/*/peru_debug/
+runs/*/mdod_debug/
+results/summary_debug.csv
+# python / office
+__pycache__/
+*.pyc
+~$*

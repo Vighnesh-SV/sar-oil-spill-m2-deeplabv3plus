@@ -1,0 +1,34 @@
+{
+  "sentinel": {
+    "groups": 1089,
+    "tiles": {
+      "train": 2516,
+      "calib": 420,
+      "val": 422,
+      "test": 835
+    },
+    "merged_block2_groups": 16,
+    "official_test_tiles_now_in": {
+      "val": 88,
+      "test": 181,
+      "train": 489,
+      "calib": 81
+    }
+  },
+  "palsar": {
+    "groups": 1728,
+    "tiles": {
+      "test": 775,
+      "train": 2327,
+      "calib": 384,
+      "val": 391
+    },
+    "merged_block2_groups": 113,
+    "official_test_tiles_now_in": {
+      "calib": 85,
+      "test": 159,
+      "train": 454,
+      "val": 78
+    }
+  }
+}

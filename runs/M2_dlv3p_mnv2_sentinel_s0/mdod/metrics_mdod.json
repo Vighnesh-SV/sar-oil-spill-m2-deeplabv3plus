@@ -1,0 +1,75 @@
+{
+  "settings": {
+    "tta": false,
+    "per_class": 400,
+    "min_side": 8,
+    "seed": 0,
+    "alert_rule": "coverage = share of box pixels with p>0.5; alert if coverage >= threshold"
+  },
+  "per_class": {
+    "biogenic slick": {
+      "n_boxes": 400,
+      "mean_box_score": 0.33524149999999997,
+      "median_coverage": 0.2882,
+      "mean_peak_score": 0.967836,
+      "alert_rate@0.02": 0.965,
+      "alert_rate@0.1": 0.865,
+      "alert_rate@0.2": 0.7,
+      "alert_rate@0.5": 0.1975
+    },
+    "low wind": {
+      "n_boxes": 400,
+      "mean_box_score": 0.6236355,
+      "median_coverage": 0.62915,
+      "mean_peak_score": 0.9916564999999999,
+      "alert_rate@0.02": 0.9925,
+      "alert_rate@0.1": 0.99,
+      "alert_rate@0.2": 0.9825,
+      "alert_rate@0.5": 0.7175
+    },
+    "oil spill": {
+      "n_boxes": 400,
+      "mean_box_score": 0.25296,
+      "median_coverage": 0.0702,
+      "mean_peak_score": 0.5961025,
+      "alert_rate@0.02": 0.57,
+      "alert_rate@0.1": 0.46,
+      "alert_rate@0.2": 0.365,
+      "alert_rate@0.5": 0.2
+    },
+    "rain cell": {
+      "n_boxes": 400,
+      "mean_box_score": 0.29309975,
+      "median_coverage": 0.22315000000000002,
+      "mean_peak_score": 0.9062372500000001,
+      "alert_rate@0.02": 0.91,
+      "alert_rate@0.1": 0.745,
+      "alert_rate@0.2": 0.5475,
+      "alert_rate@0.5": 0.2075
+    },
+    "sea ice": {
+      "n_boxes": 400,
+      "mean_box_score": 0.43463450000000003,
+      "median_coverage": 0.3902,
+      "mean_peak_score": 0.9528922500000001,
+      "alert_rate@0.02": 0.9475,
+      "alert_rate@0.1": 0.885,
+      "alert_rate@0.2": 0.78,
+      "alert_rate@0.5": 0.3775
+    }
+  },
+  "auc_oil_vs": {
+    "biogenic slick": 0.33378125,
+    "low wind": 0.16824375,
+    "rain cell": 0.386628125,
+    "sea ice": 0.284203125,
+    "all look-alikes": 0.2932140625
+  },
+  "auc_oil_vs_peak": {
+    "biogenic slick": 0.099875,
+    "low wind": 0.0504,
+    "rain cell": 0.219784375,
+    "sea ice": 0.120621875,
+    "all look-alikes": 0.1226703125
+  }
+}

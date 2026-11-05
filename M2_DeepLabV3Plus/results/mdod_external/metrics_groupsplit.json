@@ -1,0 +1,75 @@
+{
+  "settings": {
+    "tta": false,
+    "per_class": 400,
+    "min_side": 8,
+    "seed": 0,
+    "alert_rule": "coverage = share of box pixels with p>0.5; alert if coverage >= threshold"
+  },
+  "per_class": {
+    "biogenic slick": {
+      "n_boxes": 400,
+      "mean_box_score": 0.286534,
+      "median_coverage": 0.235,
+      "mean_peak_score": 0.9557634999999999,
+      "alert_rate@0.02": 0.945,
+      "alert_rate@0.1": 0.8225,
+      "alert_rate@0.2": 0.6025,
+      "alert_rate@0.5": 0.125
+    },
+    "low wind": {
+      "n_boxes": 400,
+      "mean_box_score": 0.5809664999999999,
+      "median_coverage": 0.57375,
+      "mean_peak_score": 0.9886345,
+      "alert_rate@0.02": 0.99,
+      "alert_rate@0.1": 0.9875,
+      "alert_rate@0.2": 0.97,
+      "alert_rate@0.5": 0.63
+    },
+    "oil spill": {
+      "n_boxes": 400,
+      "mean_box_score": 0.22128275000000003,
+      "median_coverage": 0.02805,
+      "mean_peak_score": 0.5150087499999999,
+      "alert_rate@0.02": 0.505,
+      "alert_rate@0.1": 0.4,
+      "alert_rate@0.2": 0.3275,
+      "alert_rate@0.5": 0.165
+    },
+    "rain cell": {
+      "n_boxes": 400,
+      "mean_box_score": 0.26198975,
+      "median_coverage": 0.1899,
+      "mean_peak_score": 0.8752172500000001,
+      "alert_rate@0.02": 0.865,
+      "alert_rate@0.1": 0.69,
+      "alert_rate@0.2": 0.49,
+      "alert_rate@0.5": 0.16
+    },
+    "sea ice": {
+      "n_boxes": 400,
+      "mean_box_score": 0.39385650000000005,
+      "median_coverage": 0.33255,
+      "mean_peak_score": 0.9362607500000002,
+      "alert_rate@0.02": 0.925,
+      "alert_rate@0.1": 0.8625,
+      "alert_rate@0.2": 0.7225,
+      "alert_rate@0.5": 0.3075
+    }
+  },
+  "auc_oil_vs": {
+    "biogenic slick": 0.330109375,
+    "low wind": 0.159115625,
+    "rain cell": 0.373490625,
+    "sea ice": 0.2793875,
+    "all look-alikes": 0.28552578125
+  },
+  "auc_oil_vs_peak": {
+    "biogenic slick": 0.101315625,
+    "low wind": 0.05290625,
+    "rain cell": 0.214478125,
+    "sea ice": 0.126340625,
+    "all look-alikes": 0.12376015625
+  }
+}

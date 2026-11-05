@@ -1,0 +1,75 @@
+{
+  "settings": {
+    "tta": false,
+    "per_class": 400,
+    "min_side": 8,
+    "seed": 0,
+    "alert_rule": "coverage = share of box pixels with p>0.5; alert if coverage >= threshold"
+  },
+  "per_class": {
+    "biogenic slick": {
+      "n_boxes": 400,
+      "mean_box_score": 0.27296624999999997,
+      "median_coverage": 0.22820000000000001,
+      "mean_peak_score": 0.946856,
+      "alert_rate@0.02": 0.9325,
+      "alert_rate@0.1": 0.815,
+      "alert_rate@0.2": 0.57,
+      "alert_rate@0.5": 0.125
+    },
+    "low wind": {
+      "n_boxes": 400,
+      "mean_box_score": 0.556204,
+      "median_coverage": 0.5383,
+      "mean_peak_score": 0.9838075000000001,
+      "alert_rate@0.02": 0.9825,
+      "alert_rate@0.1": 0.9825,
+      "alert_rate@0.2": 0.9675,
+      "alert_rate@0.5": 0.5825
+    },
+    "oil spill": {
+      "n_boxes": 400,
+      "mean_box_score": 0.2537525,
+      "median_coverage": 0.0756,
+      "mean_peak_score": 0.5695669999999999,
+      "alert_rate@0.02": 0.555,
+      "alert_rate@0.1": 0.4875,
+      "alert_rate@0.2": 0.385,
+      "alert_rate@0.5": 0.2
+    },
+    "rain cell": {
+      "n_boxes": 400,
+      "mean_box_score": 0.287928,
+      "median_coverage": 0.2223,
+      "mean_peak_score": 0.87517675,
+      "alert_rate@0.02": 0.87,
+      "alert_rate@0.1": 0.7225,
+      "alert_rate@0.2": 0.545,
+      "alert_rate@0.5": 0.1925
+    },
+    "sea ice": {
+      "n_boxes": 400,
+      "mean_box_score": 0.355466,
+      "median_coverage": 0.29469999999999996,
+      "mean_peak_score": 0.91863575,
+      "alert_rate@0.02": 0.91,
+      "alert_rate@0.1": 0.8225,
+      "alert_rate@0.2": 0.66,
+      "alert_rate@0.5": 0.28
+    }
+  },
+  "auc_oil_vs": {
+    "biogenic slick": 0.390475,
+    "low wind": 0.195475,
+    "rain cell": 0.403978125,
+    "sea ice": 0.350134375,
+    "all look-alikes": 0.335015625
+  },
+  "auc_oil_vs_peak": {
+    "biogenic slick": 0.1251375,
+    "low wind": 0.058325,
+    "rain cell": 0.23764375,
+    "sea ice": 0.1566875,
+    "all look-alikes": 0.1444484375
+  }
+}
