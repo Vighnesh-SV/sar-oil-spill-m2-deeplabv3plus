@@ -2,7 +2,7 @@
 
 Peru: 2,013 Sentinel-1 patches (512 x 512, one band copied to 3 channels, the same format as SOS)
 from 40 scenes, with 5-class masks: 0 sea, 1 oil, 2 look-alike, 3 ship, 4 land
-(1 and 2 are confirmed by the dataset's correction log; 0/3/4 follow the usual convention).
+(all five IDs are confirmed by the dataset authors' paper, arXiv 2512.02290).
 
 * Each 512 x 512 patch is cut into four 256 x 256 tiles (the training input size), predicted with
   the same 8-way TTA as evaluate.py, and stitched back.

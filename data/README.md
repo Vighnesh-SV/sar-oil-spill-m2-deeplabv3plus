@@ -20,7 +20,7 @@ data/
 
 Label conventions used by the code:
 - SOS: mask 255 = oil, 0 = background (stored with 3 identical channels; read as one channel).
-- Peru: 0 sea, 1 oil, 2 look-alike, 3 ship, 4 land (1 and 2 confirmed by the dataset's correction log; 0/3/4 assumed). Scored as oil (1) vs everything else.
+- Peru: 0 sea, 1 oil, 2 look-alike, 3 ship, 4 land (all five confirmed by the dataset authors' paper, arXiv 2512.02290). Scored as oil (1) vs everything else.
 - MDOD `category_id`: 1 biogenic slick, 2 low wind, 3 oil spill, 4 rain cell, 5 sea ice (inferred from the MDOD paper's class order and example figures; the release has no class names).
 
 The leak-free SOS split (`leakage_check/splits/sos_sentinel_group_s0.csv`) stores paths relative to `data/SOS_dataset/` (for example `test/sentinel/sat/20001_sat.jpg`).

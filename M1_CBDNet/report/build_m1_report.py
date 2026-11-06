@@ -212,6 +212,7 @@ def build():
         ["A. SOS official split (leaky)", "official-split", p1(ot["f1_oil"]), p1(ot["iou_oil"]), p1(ot["miou"]),
          p1(ot["precision_oil"]), p1(ot["recall_oil"]), p1(ot["ece"])],
         ["   published [P29]", "", "87.81", "—", "82.94", "—", "—", "—"],
+        ["   CBD-Net paper [P24], joint loss", "", "87.87", "—", "83.42", "91.20", "87.32", "—"],
         ["B. SOS group split (leak-free)", "leak-free", p1(gt["f1_oil"]), p1(gt["iou_oil"]), p1(gt["miou"]),
          p1(gt["precision_oil"]), p1(gt["recall_oil"]), p1(gt["ece"])],
         ["C. Peru (external, 2,013 patches)", "official-split", p1(po["f1_oil"]), p1(po["iou_oil"]), p1(po["miou"]),
@@ -232,7 +233,9 @@ def build():
     D.p("**Key findings**")
     D.bullets([
         f"**The reproduction succeeds.** On the official SOS split our mIoU is {p1(ot['miou'])} % (published 82.94 %) "
-        f"and oil F1 is {p1(ot['f1_oil'])} % (published 87.81 %); both gaps are within ±0.2 pp.",
+        f"and oil F1 is {p1(ot['f1_oil'])} % (published 87.81 %); both gaps are within ±0.2 pp. Against CBD-Net's own paper "
+        f"(mIoU 83.42 %, F1 87.87 %, trained with its joint boundary loss) the gaps are {100 * ot['miou'] - 83.42:+.2f} / "
+        f"{100 * ot['f1_oil'] - 87.87:+.2f} pp.",
         f"**The official split leaks, but the effect is small.** Every official test tile has augmented copies of "
         f"its sea area in training. On a leak-free split, oil IoU drops by {abs(100*(gt['iou_oil']-ot['iou_oil'])):.2f} pp "
         f"and oil F1 by {abs(100*(gt['f1_oil']-ot['f1_oil'])):.2f} pp.",
@@ -323,8 +326,8 @@ def build():
         f"on the {OFF['n_tiles']} official test tiles. Training stopped at epoch {ep_o}; the best training loss was "
         f"{loss_o:.4f} at epoch {best_o}.")
     D.h("4.1 Quantitative results", 2)
-    rows = [["Metric (%)", "Ours, with TTA", "Ours, single pass", "Published [P29]"]]
-    pub = {"f1_oil": "87.81", "miou": "82.94"}
+    rows = [["Metric (%)", "Ours, with TTA", "Ours, single pass", "Published [P29] / CBD-Net paper [P24]"]]
+    pub = {"f1_oil": "87.81 / 87.87", "miou": "82.94 / 83.42", "precision_oil": "— / 91.20", "recall_oil": "— / 87.32"}
     for lab, k in seg_rows(None):
         rows.append([lab, p1(ot[k]), p1(op_[k]), pub.get(k, "—")])
     D.table("Segmentation metrics on the official SOS Sentinel-1 test set.", rows, widths=[7.0, 3.3, 3.3, 3.4])

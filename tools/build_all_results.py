@@ -548,11 +548,15 @@ def qa_doc():
     D.bullets([
         f"**SOS is smaller than its tile count:** its {sd['official']['train_tiles'] + sd['official']['test_tiles']:,} Sentinel-1 tiles come "
         f"from {sd['total_groups']:,} independent sea areas; each area appears as up to 5 augmented copies (crop, rotation, flip, zoom, noise).",
+        "**SOS Sentinel-1 comes from only 7 scenes** (Sentinel-1A IW GRD, VV, 5 × 20 m, one spill event [P24]). The leak-free "
+        "split therefore separates sea areas, not scenes: its test areas come from the same 7 scenes as training, so some "
+        "scene-level similarity remains.",
         "**SOS has no look-alike class:** every dark area in a training tile is either labelled oil or is background sea. The "
         "models are never shown a dark area that is not oil, which explains the Peru and MDOD failures.",
         f"**Peru is scene-structured:** median {pd_['patches_per_scene_median']:.0f} patches per scene "
         f"({pd_['patches_per_scene_min']}–{pd_['patches_per_scene_max']}), so patches of one scene are not independent. "
-        "Confidence intervals resample whole scenes.",
+        "Neighbouring patches also overlap by a 128-px strip (stride 384, verified in all 40 scenes), so overlapping pixels are "
+        "counted more than once in pooled Peru metrics. Confidence intervals resample whole scenes.",
         "**MDOD is about 10× coarser than SOS, noticeably brighter, and only has boxes**, so it supports box-level alert tests, "
         "not pixel IoU. It is used as a supplementary look-alike stress test.",
     ])
@@ -601,16 +605,28 @@ def qa_doc():
              "set is the first IDs, so 100 % of test tiles (839/839) have copies in training; 571/839 best matches fall exactly on "
              "the copy offsets (chance ≈ 0.1 %)", "Built a group-disjoint (leak-free) split: 2,516 / 422 / 420 / 835 tiles, "
              "no area shared; every model trained and tested on both splits"],
+            ["Source scenes (SOS)", "Read the dataset paper [P24]", "Sentinel-1: 7 Sentinel-1A IW GRD scenes, VV, 5 × 20 m; "
+             "PALSAR: 14 scenes, HH, 12.5 m; tiles split 8 : 2 at random", "The leak-free split is area-disjoint, not "
+             "scene-disjoint (a scene-disjoint split would leave only 1–2 scenes for testing)"],
             ["Class balance (SOS)", "Oil share of pixels per split", "29.3 % / 34.7 % (official), 30.6 % / 29.6 % (leak-free)",
              "mIoU and accuracy depend on oil share, so we compare on oil IoU / F1"],
-            ["Label meaning (Peru)", "Inspected masks and the dataset description", "1 = oil and 2 = look-alike confirmed; 0 / 3 / 4 "
-             "(sea / ship / land) assumed", "Only the oil class is scored as positive; look-alike false alarms reported separately"],
+            ["Label meaning (Peru)", "Inspected masks, the correction log and the dataset authors' paper",
+             "all five IDs confirmed by the dataset paper (arXiv 2512.02290): 0 sea, 1 oil, 2 look-alike, 3 ship, 4 land", "Only the oil class is scored as positive; look-alike false alarms reported separately"],
             ["Scene structure (Peru)", "Patches per scene from the manifest", f"{pd_['n_scenes']} scenes, {pd_['patches_per_scene_min']}–"
              f"{pd_['patches_per_scene_max']} patches each; largest scene {100 * pd_['largest_scene_share']:.1f} % of patches",
              "Scene-level bootstrap for confidence intervals"],
+            ["Polarisation (Peru)", "File names and the dataset paper", "file names say VV (438 patches) or VV+VH (1,575); "
+             "the paper states that only VV was kept", "Same polarisation as SOS Sentinel-1 (VV)"],
+            ["Patch overlap (Peru)", "Compared the 128-px borders of all patches within each scene",
+             "2,285 exact 128-px overlaps, in all 40 scenes (stride 384)", "Overlapping pixels count more than once in pooled "
+             "metrics; no effect across splits (they are scene-disjoint)"],
+            ["Version and integrity (Peru)", "Checked the release's checksums, audit file and version file",
+             "all 4,033 files match the official SHA-256 list; corrected release; audit clean (no duplicates, no mixed scenes); "
+             "re-split after the paper (1,594 / 81 / 338 vs 1,795 / 218)", "Published Peru scores use a different split: context only"],
             ["Class IDs (MDOD)", "Release has no class names; compared with the paper's class order and example figures",
-             "1 biogenic slick, 2 low wind, 3 oil, 4 rain cell, 5 sea ice; the release is larger than the paper (24,940 vs 11,040 objects) "
-             "and has no split or pixel masks", "Box-level alert evaluation, 400 boxes per class"],
+             "1 biogenic slick, 2 low wind, 3 oil, 4 rain cell, 5 sea ice (inferred). Box counts per ID support 3 = oil (most boxes) and "
+             "5 = sea ice (fewest) but cannot separate 2 from 4. The release is an expanded version (the OSF page says it is "
+             "actively updated): 24,940 vs 11,040 objects in the paper; no split or pixel masks", "Box-level alert evaluation, 400 boxes per class"],
             ["Box sizes (MDOD)", "Short side of every sampled box", f"oil median {md_['oil spill']['median_short_side_px']:.0f} px; look-alikes "
              f"{md_['rain cell']['median_short_side_px']:.0f}–{md_['biogenic slick']['median_short_side_px']:.0f} px", "Size confound: "
              "class comparisons are partly size comparisons"],
@@ -672,6 +688,11 @@ def qa_doc():
     D.bullets([
         "**Limits of the checks:** one training seed per model; M2 and M3 depend on the assumptions listed; the M2 paper does "
         "not say which class its F1 is for.",
+        "**M1's own paper:** CBD-Net's Table III (Sentinel-1) reports mIoU 83.42 % and F1 87.87 %, trained with its joint boundary "
+        "loss; the released code, used here, trains with BCE + Dice. Against it our mIoU is 0.63 pp lower and our F1 0.04 pp "
+        "higher, still within ±2 pp. Its precision 91.20 % and recall 87.32 % would give F1 89.22 %, not 87.87 %, so its metrics "
+        "were probably averaged differently (its text also swaps precision and recall for PALSAR). The reference used in the "
+        "tables is the independent re-run in [P29].",
         "**M2's published numbers are internally odd:** an oil F1 of 89.62 % implies oil IoU ≈ 81.2 %, so mIoU 81.34 % would need "
         "background IoU ≈ 81.5 %, below oil IoU although background is ≈ 65 % of pixels (we measure 87–90 %). Their F1 and mIoU "
         "were probably computed differently, so the published F1 should not be compared directly.",
